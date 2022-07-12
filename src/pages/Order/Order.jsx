@@ -13,8 +13,7 @@ import { Button } from '../../components/Button/Button';
 
 export const Order = ()=>{
 
-  
- 
+
   const navigate = useNavigate();
 
   const {id} = useParams()

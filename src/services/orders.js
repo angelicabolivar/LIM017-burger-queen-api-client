@@ -1,15 +1,18 @@
 import axios from 'axios';
-// import {urlBase} from '../config'
+import {urlBase} from '../config'
 
-// const urlOrders = `${urlBase}/orders`
-let url="http://localhost:5000/orders";
+const urlOrders = `${urlBase}/orders`
 
-export const createOrder = (url, data)=>{
-  return axios.post(url, data)
+export const createOrder = (urlOrders, data)=>{
+  return axios.post(urlOrders, data)
 }
 
 export const getOrders = () => {
-  return axios.get(url)
+  return axios.get(urlOrders)
+}
+export const getOrdersByStatus =(status) =>{
+  const urlStatus = `${urlOrders}?status=${status}`
+  return axios.get(urlStatus)
 }
 
 export const getOrder = (id) => {
