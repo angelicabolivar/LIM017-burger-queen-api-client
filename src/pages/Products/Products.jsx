@@ -1,20 +1,24 @@
 import React, {useState} from "react";
 import { useEffect } from "react";
-import { helpHttp } from "../../helpers/helpHttp";
-import { CrudForm } from "./CrudForm";
-import { CrudTable } from "./CrudTable";
-import { Loader } from "./Loader";
-import { Message } from "./Message";
+import { helpHttp } from "../../Helpers/helpHttp";
+import { CrudForm } from "../../components/ProductsTable/CrudForm/CrudForm";
+import { CrudTable } from "../../components/ProductsTable/CrudTable/CrudTable";
+import { Loader } from "../../components/Utils/Loader/Loader";
+import { Message } from "../../components/Utils/Message";
+// import {createProducts} from '../../services/products/createProducts'
+import styleProducts from "./style.module.css";
 
 
-export const CrudApi = () => {
+export const Products = () => {
 const [db, setDb] = useState(null);
 const [dataToEdit, setDataToEdit] = useState(null);
 const [error, setError] = useState(null);
 const [loading, setLoading] = useState(false);
 
 let api = helpHttp();
-let url = "http://localhost:5000/users";
+let url = "http://localhost:5000/products";
+
+
 
 useEffect(()=>{
     setLoading(true);
@@ -91,9 +95,10 @@ const deleteData = (id) => {
 
     return (
         <div>
-            <h2>Usuarios</h2>
-            <article className="grid-1-2">
+            <h2>Productos</h2>
+            <article  className={styleProducts.divFlex}>
             <CrudForm 
+            className={styleProducts.fromStyle}
             createData={createData} 
             updateData={updateData} 
             dataToEdit={dataToEdit}  
@@ -104,6 +109,7 @@ const deleteData = (id) => {
             msg={`Error ${error.status}: ${error.statusText}`} 
             bgColor="#dc3545"/>}
             {db&&<CrudTable 
+            className={styleProducts.tableStyle}
             data={db} 
             setDataToEdit={setDataToEdit}
             deleteData={deleteData} 

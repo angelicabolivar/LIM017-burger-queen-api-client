@@ -3,8 +3,8 @@ import {urlBase} from '../config'
 
 const urlOrders = `${urlBase}/orders`
 
-export const createOrder = (url, data)=>{
-  return axios.post(url, data)
+export const createOrder = (urlOrders, data)=>{
+  return axios.post(urlOrders, data)
 }
 
 export const getOrders = () => {
@@ -16,11 +16,11 @@ export const getOrdersByStatus =(status) =>{
 }
 
 export const getOrder = (id) => {
-  const urlOrder = `${urlOrders}/${id}`
+  const urlOrder = `${url}/${id}`
   return axios.get(urlOrder)
 }
 
 export const putOrder =(id, data) =>{
-  const urlOrder = `${urlOrders}/${id}`
+  const urlOrder = `${url}/${id}`
   return axios.put(urlOrder, data)
 }
