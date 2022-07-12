@@ -29,7 +29,6 @@ export const Products = () => {
         {product.name} - ${product.price}
       </p>
     </div>
-    {/* <button onClick={() => addItemToCart(product)}> Agregar al carrito </button> */}
     <Button type="submit" onClick={() => addItemToCart(product)} className="btn btn-warning btn-sm" name="Agregar" ></Button>
     </div>
     ))}
