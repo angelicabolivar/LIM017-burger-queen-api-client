@@ -1,0 +1,32 @@
+.pedidosContainer{
+  padding: 10px;
+}
+
+.orderTitle{
+  font-size: 20px;
+}
+
+.pedidos{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.State{
+  width: 100px;
+  height: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.pending{
+  background-color: red;
+}
+.delivered{
+  background-color: green;
+}
+.delivering{
+  background-color: yellow;
+}
+.canceled{
+  background-color: gray;
+}
