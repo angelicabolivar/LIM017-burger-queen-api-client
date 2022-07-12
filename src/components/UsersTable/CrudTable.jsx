@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import { CrudTableRow } from "./CrudTableRow";
 
 export const CrudTable =({data, setDataToEdit, deleteData}) => {
@@ -9,7 +9,7 @@ export const CrudTable =({data, setDataToEdit, deleteData}) => {
                 <thead>
                     <tr>
                         <th>Email</th>
-                        <th>Admin</th>
+                        <th>Contraseña</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

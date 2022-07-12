@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from 'react';
+import {Button} from '../../Button/Button';
+// import StyleForm './style.module.css'
 
 const initailForm = {
-    id: null,
-    email:"",
-    roles:{
-      admin: Boolean(false)
-    }
-    
+    dateEntry: null,
+    name: "",
+    price: null,
+    image: "",
+    type: "",
+    id: null 
 };
 
 export const CrudForm = ({createData, updateData, dataToEdit, setDataToEdit}) => {
@@ -27,20 +29,10 @@ const [form, setForm] =useState(initailForm)
     });
     };
 
-    const handleChangeAdmin = (e) => {
-        debugger
-        setForm({
-          ...form,
-          roles:{
-            admin: e.target.value
-          }
-       });
-       };
-
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        if(!form.email){
+        if(!form.name || !form.price){
             alert("Datos incompletos");
             return;
         }
@@ -65,11 +57,12 @@ return (
     <div>
         <h3>{dataToEdit? "Editar":"Agregar"} </h3>
         <form onSubmit={handleSubmit}>
-            <input type="text" name="email" placeholder="Email" onChange={handleChange}  value={form.email} />
-            <label> ¿Es admin?</label>
-            <input type="checkbox"   name="roles" placeholder="¿Admin?" onChange={handleChangeAdmin}  value={form.roles.admin} />
-            <input type="submit" value="Enviar" />
-            <input type="reset" value="Limpiar" onClick={handleReset} />
+            <input type="text" name="name" placeholder="Nombre" onChange={handleChange}  value={form.name} />
+            <input type="text" name="price" placeholder="Precio" onChange={handleChange}  value={form.price} />
+            <input type="text" name="type" placeholder="Tipo" onChange={handleChange}  value={form.type} />
+            <input type="text" name="image" placeholder="Imagen" onChange={handleChange}  value={form.image} />
+            <Button type="submit" className="btn btn-warning btn-lg" name="Enviar" ></Button>
+            <Button type="reset" onClick={handleReset} className="btn btn-warning btn-lg" name="Limpiar" ></Button>
         </form>
     </div>
 )
