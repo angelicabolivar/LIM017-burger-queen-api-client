@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "../../Button/Button";
 
 export const CrudTableRow = ({el, setDataToEdit, deleteData}) => {
  const { id, dateEntry, name, price, image, type} = el;
@@ -11,8 +12,8 @@ export const CrudTableRow = ({el, setDataToEdit, deleteData}) => {
                 <td>{type}</td>
                 <td>{image}</td>
                 <td>
-                <button onClick={()=> setDataToEdit(el)}>Editar</button>
-                <button onClick={()=> deleteData(id)}>Eliminar</button>
+                <Button type="submit" onClick={()=> setDataToEdit(el)} className="btn btn-warning btn-sm" name="Editar" ></Button>
+                <Button type="submit" onClick={()=> deleteData(id)} className="btn btn-warning btn-sm" name="Eliminar" ></Button>
                 </td>
             </tr> 
         </div>

@@ -6,8 +6,8 @@ import { Login } from './pages/Login/Login';
 import { Onboarding } from './pages/Onboarding/Onboarding';
 import { Orders } from './pages/Orders/Orders';
 import { Order } from './pages/Order/Order';
-import { CrudApi } from './components/crud/CrudApi';
-import { CrudProducts } from './components/crudProducts/CrudProducts';
+import { Users } from './pages/Users/Users'
+import { Products } from './pages/Products/Products';
 
 
 
@@ -22,8 +22,8 @@ function App() {
       <Route path='/home' element={<Home/>}/> 
       <Route path='/orders' element={<Orders/>}/>
       <Route path='/order/:id' element={<Order/>}/> 
-      <Route path='/users' element={<CrudApi />}/>
-      <Route path='/products' element={<CrudProducts/>}/>
+      <Route path='/users' element={<Users />}/>
+      <Route path='/products' element={<Products/>}/>
 
     </Routes>
   </BrowserRouter>

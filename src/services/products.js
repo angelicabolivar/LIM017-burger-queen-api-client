@@ -1,6 +1,4 @@
 import axios from 'axios';
-// import {urlBase} from '../config'
-
 
 const urlProducts = "http://localhost:5000/products";
 

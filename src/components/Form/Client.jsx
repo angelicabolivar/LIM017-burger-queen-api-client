@@ -4,11 +4,7 @@ import { Products } from "../Products/Products";
 
   export const NameClient = ({}) =>{
     const [name, setName] = useState("");
-    // const handleSubmit = e => {
-    //   e.preventDefault();
-    //   alert("Se envio el nombre del cliente")
-    // }
-    // onSubmit={handleSubmit}
+ 
     const handleChange =(e)=> {
       setName(e.target.value);
     }
@@ -24,7 +20,6 @@ import { Products } from "../Products/Products";
       value={name}
       onChange={handleChange}
       />
-      {/* <input type="submit" /> */}
   </form>
 
     <Cart name={name} />
