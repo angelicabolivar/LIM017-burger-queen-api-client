@@ -1,12 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
 const initailForm = {
-    dateEntry: null,
-    name: "",
-    price: null,
-    image: "",
-    type: "",
-    id: null 
+    id: null,
+    email:"",
+    password:"",
+    // roles: false
+    
 };
 
 export const CrudForm = ({createData, updateData, dataToEdit, setDataToEdit}) => {
@@ -27,10 +26,18 @@ const [form, setForm] =useState(initailForm)
     });
     };
 
+    // const handleChangeAdmin = (e) => {
+    //     debugger
+    //     setForm({
+    //       ...form,
+    //       roles: e.target.value
+    //    });
+    //    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
     
-        if(!form.name || !form.price){
+        if(!form.email){
             alert("Datos incompletos");
             return;
         }
@@ -55,10 +62,10 @@ return (
     <div>
         <h3>{dataToEdit? "Editar":"Agregar"} </h3>
         <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="Nombre" onChange={handleChange}  value={form.name} />
-            <input type="text" name="price" placeholder="Precio" onChange={handleChange}  value={form.price} />
-            <input type="text" name="type" placeholder="Tipo" onChange={handleChange}  value={form.type} />
-            <input type="text" name="image" placeholder="Imagen" onChange={handleChange}  value={form.image} />
+            <input type="text" name="email" placeholder="Email" onChange={handleChange}  value={form.email} />
+            <input type="text" name="password" placeholder="Contraseña" onChange={handleChange}  value={form.password} />
+            {/* <label> ¿Es admin?</label>
+            <input type="checkbox"   name="roles" placeholder="¿Admin?" onChange={handleChange}  value={form.roles} /> */}
             <input type="submit" value="Enviar" />
             <input type="reset" value="Limpiar" onClick={handleReset} />
         </form>

@@ -1,20 +1,20 @@
 import React, {useState} from "react";
 import { useEffect } from "react";
-import { helpHttp } from "../../helpers/helpHttp";
-import { CrudForm } from "./CrudForm";
-import { CrudTable } from "./CrudTable";
-import { Loader } from "./Loader";
-import { Message } from "./Message";
+import { helpHttp } from "../../Helpers/helpHttp";
+import { CrudForm } from "../../components/UsersTable/CrudForm";
+import { CrudTable } from "../../components/UsersTable/CrudTable";
+import { Loader } from "../../components/Utils/Loader/Loader";
+import { Message } from "../../components/Utils/Message";
 
 
-export const CrudProducts = () => {
+export const Users= () => {
 const [db, setDb] = useState(null);
 const [dataToEdit, setDataToEdit] = useState(null);
 const [error, setError] = useState(null);
 const [loading, setLoading] = useState(false);
 
 let api = helpHttp();
-let url = "http://localhost:5000/products";
+let url = "http://localhost:5000/users";
 
 useEffect(()=>{
     setLoading(true);
@@ -91,7 +91,7 @@ const deleteData = (id) => {
 
     return (
         <div>
-            <h2>Productos</h2>
+            <h2>Usuarios</h2>
             <article className="grid-1-2">
             <CrudForm 
             createData={createData} 

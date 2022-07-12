@@ -63,52 +63,12 @@
       "dataEntry": "2022-03-05 15:00",
       "dateProcessed": "2022-03-05 16:00"
     },
+   
+  
     {
-      "client": "",
+      "userId": "",
+      "client": "emi123456789",
       "products": [
-        {
-          "id": 1,
-          "name": "Sandwich de jamón y queso",
-          "price": 1000,
-          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-          "type": "Desayuno",
-          "dateEntry": "2022-03-05 15:14:10",
-          "qty": 1
-        },
-        {
-          "id": 3,
-          "name": "Agua 500ml",
-          "price": 500,
-          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/water.png",
-          "type": "Almuerzo",
-          "dateEntry": "2022-03-05 15:14:10",
-          "qty": 1
-        },
-        {
-          "id": 2,
-          "name": "Café americano",
-          "price": 500,
-          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/coffee.png",
-          "type": "Desayuno",
-          "dateEntry": "2022-03-05 15:14:10",
-          "qty": 1
-        }
-      ],
-      "status": "pending",
-      "id": 3
-    },
-    {
-      "client": "Maria",
-      "products": [
-        {
-          "id": 1,
-          "name": "Sandwich de jamón y queso",
-          "price": 1000,
-          "image": "https://raw.githubusercontent.com/ssinuco/burger-queen-api-mock/main/resources/images/sandwich.png",
-          "type": "Desayuno",
-          "dateEntry": "2022-03-05 15:14:10",
-          "qty": 1
-        },
         {
           "id": 3,
           "name": "Agua 500ml",
@@ -119,8 +79,9 @@
           "qty": 1
         }
       ],
+      "dateEntry": "2022-07-12T13:48:04.556Z",
       "status": "pending",
-      "id": 4
+      "id": 29
     }
   ],
   "products": [
@@ -173,6 +134,16 @@
         "admin": true
       },
       "id": 2
+    },
+    {
+      "email": "Christop95@yahoo.com",
+      "password": "jjjjjj",
+      "id": 3
+    },
+    {
+      "email": "anita.borg@systers.xyz",
+      "password": "$2a$10$gVkmcWdnwEBxXj2PWjuv9uDx7BfjiAobbabDAOrH2o8b1i3E7KwR.",
+      "id": 4
     }
   ]
 }

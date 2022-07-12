@@ -8,11 +8,14 @@ import {ItemCart} from '../ItemCart/ItemCart'
 import  './style.css';
 import { Button } from '../Button/Button';
 
+
+
 export const Cart= (props) => {
   const [cartOpen, setCartOpen] = useState(false);
   const [productsLength, setProductsLength] = useState(0);
 
   const {cartItems} = useContext(CartContext);
+
 
   useEffect(() => {
     setProductsLength(
@@ -26,20 +29,24 @@ export const Cart= (props) => {
   );
 
   const handleOrders = (e) =>{
+
     let url = "http://localhost:5000/orders";
     const data = {
+      userId: localStorage.getItem('token'),
       client: props.name,
       products:cartItems,
+      dateEntry: new Date(),
       status: "pending"
 
     };
 
     createOrder(url, data).then((res)=> console.log(res)).catch((error)=> console.log(error))
+
+    setCartOpen(false);
+    setCartItems(cartItems.reset())
   }
 
-//   const handleReset = (e) => {
-  
-//  }
+
 
   return(
   <div className="cartContainer">
@@ -62,9 +69,8 @@ export const Cart= (props) => {
          </div>)
       }
 
-      <h2 className="total"> Total: $ {total} </h2>
+      <h2 className="total"> Total: S/. {total} </h2>
       <Button type="submit" onClick={handleOrders} className="btn btn-warning btn-lg" name="Enviar Orden" ></Button>
-      {/* <Button type="reset" onClick={handleReset} className="btn btn-warning btn-lg" name="Limpiar" ></Button> */}
      </div>
     )}
   </div>
